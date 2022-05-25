@@ -13,32 +13,16 @@ function onCheckInputLength (event) {
     const inputData = event.currentTarget.dataset.length;
     const inputLength = String(event.currentTarget.value.length);
     if (inputData === inputLength) {
-                    addValid();
-                    removeInvalid();
-                // inputRef.classList.add('valid')
-                // inputRef.classList.remove('invalid')
+        updateClass('valid', 'invalid');
             } else {
-                addInvalid ();
-                removeValid();
-                // inputRef.classList.add('invalid')
-                // inputRef.classList.remove('valid')
+               updateClass('invalid', 'valid');
             }
 };
 
+function updateClass(addCla, remCla) {
+    inputRef.classList.add(addCla);
+    inputRef.classList.remove(remCla);
+}
 
-function addValid() {
-    inputRef.classList.add('valid');
-};
 
-function removeInvalid() {
-    inputRef.classList.remove('invalid')
-};
-
-function addInvalid () {
-    inputRef.classList.add('invalid');
-};
-
-function removeValid() {
-    inputRef.classList.remove('valid');
-};
 
